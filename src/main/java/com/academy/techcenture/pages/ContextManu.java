@@ -14,9 +14,6 @@ public class ContextManu extends BasePage{
     }
 
 
-    @FindBy(xpath = "//div[@id='content']/div/h3")
-    private WebElement contextMenuLogo;
-
     @FindBy(id = "hot-spot")
     private WebElement box;
 
@@ -27,12 +24,11 @@ public class ContextManu extends BasePage{
 
 
     private void checkAlertWindow(){
-        softAssert.assertEquals(contextMenuLogo.getText().trim(),"Context Menu","Context manu logo does not match");
+        softAssert.assertEquals(pageLogo.getText().trim(),"Context Menu","Context manu logo does not match");
         actions.contextClick(box).build().perform();
         Alert alert = driver.switchTo().alert();
         softAssert.assertEquals(alert.getText(),"You selected a context menu","Alert message does not match");
         alert.accept();
-        contextMenuLogo.click();
     }
 
 

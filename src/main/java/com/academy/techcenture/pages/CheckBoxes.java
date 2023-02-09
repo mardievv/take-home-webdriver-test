@@ -15,8 +15,6 @@ public class CheckBoxes extends BasePage {
         super(driver, softAssert);
     }
 
-    @FindBy(xpath = "//div[@id='content']//div/h3")
-    private WebElement checkBoxesLogo;
 
     @FindBy(xpath = "//form[@id='checkboxes']/input")
     private List<WebElement> checkboxesInput;
@@ -45,7 +43,7 @@ public class CheckBoxes extends BasePage {
      * This method will click all unchecked checkboxes and verify If all checkboxes are checked
      */
     private void checkbox(){
-        softAssert.assertEquals(checkBoxesLogo.getText().trim(),"Checkboxes", "Checkboxes logo do not match");
+        softAssert.assertEquals(pageLogo.getText().trim(),"Checkboxes", "Checkboxes logo do not match");
         for (WebElement checkbox : checkboxesInput) {
             if (!checkbox.isSelected())
                 checkbox.click();
@@ -58,7 +56,7 @@ public class CheckBoxes extends BasePage {
      * This method will click all checked checkboxes and verify If all checkboxes are unchecked
      */
     private void unCheckbox(){
-        softAssert.assertEquals(checkBoxesLogo.getText().trim(),"Checkboxes", "Checkboxes logo do not match");
+        softAssert.assertEquals(pageLogo.getText().trim(),"Checkboxes", "Checkboxes logo do not match");
         for (WebElement checkbox : checkboxesInput) {
             if (checkbox.isSelected())
                 checkbox.click();
