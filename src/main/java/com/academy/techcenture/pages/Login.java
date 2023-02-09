@@ -64,7 +64,7 @@ public class Login extends BasePage{
     }
 
     private void navigateToLoginPage(){
-        driver.get("http://localhost:7080/login");
+        driver.get(getProperties("url")+"/login");
         softAssert.assertEquals(driver.getTitle(),"The Internet","Titles do not match");
     }
 

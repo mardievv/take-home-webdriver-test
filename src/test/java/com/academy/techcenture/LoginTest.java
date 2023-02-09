@@ -9,7 +9,7 @@ public class LoginTest extends BaseTest {
 
 
     @Test
-    public void LoginTest(){
+    public void LoginTestCase(){
         Login login = new Login(driver,softAssert);
         login.verifyLoginFunctionality();
     }
