@@ -1,7 +1,9 @@
 package com.academy.techcenture.pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
@@ -25,5 +27,8 @@ public class BasePage {
         actions = new Actions(this.driver);
         PageFactory.initElements(driver,this);
     }
+
+    @FindBy(xpath = "//div[@id='content']/div/h3")
+    protected WebElement pageLogo;
 
 }
