@@ -27,7 +27,7 @@ public class DragAndDrop extends BasePage{
     public void dragAndDropAction(){
         navigateToDragAndDropPage();
         dragAndDrop(columnA,columnB);
-        softAssert.assertEquals(activeColumn.getText().trim(),"B","The item did not drag and drop");
+        softAssert.assertEquals(activeColumn.getText().trim(),"B","The item did not drag and drop!");
     }
 
 
